@@ -1,0 +1,1390 @@
+{
+  "dataSpecification": {
+    "attributes": [
+      {
+        "attributeName": "No",
+        "attributeType": "numeric"
+      },
+      {
+        "attributeName": "APOE4",
+        "attributeType": "numeric"
+      },
+      {
+        "attributeName": "wentricles_bl",
+        "attributeType": "numeric"
+      },
+      {
+        "attributeName": "Hippocampus_bl",
+        "attributeType": "numeric"
+      },
+      {
+        "attributeName": "WholeBrain_bl",
+        "attributeType": "numeric"
+      },
+      {
+        "attributeName": "Entorhinal_bl",
+        "attributeType": "numeric"
+      },
+      {
+        "attributeName": "Fusiform_bl",
+        "attributeType": "numeric"
+      },
+      {
+        "attributeName": "MidTemp_bl",
+        "attributeType": "numeric"
+      },
+      {
+        "attributeName": "ICw_bl",
+        "attributeType": "numeric"
+      },
+      {
+        "attributeName": "FDG_bl",
+        "attributeType": "numeric"
+      },
+      {
+        "attributeName": "Aw45_bl",
+        "attributeType": "numeric"
+      },
+      {
+        "attributeName": "CDRSB_bl",
+        "attributeType": "numeric"
+      },
+      {
+        "attributeName": "ADAS13_bl",
+        "attributeType": "numeric"
+      },
+      {
+        "attributeName": "MMSE_bl",
+        "attributeType": "numeric"
+      },
+      {
+        "attributeName": "RAwLT_immediate_bl",
+        "attributeType": "numeric"
+      },
+      {
+        "attributeName": "RAwLT_learning_bl",
+        "attributeType": "numeric"
+      },
+      {
+        "attributeName": "RAwLT_forgetting_bl",
+        "attributeType": "numeric"
+      },
+      {
+        "attributeName": "RAwLT_perc_forgetting_bl",
+        "attributeType": "numeric"
+      },
+      {
+        "attributeName": "FAQ_bl",
+        "attributeType": "numeric"
+      },
+      {
+        "attributeName": "MOCA_bl",
+        "attributeType": "numeric"
+      },
+      {
+        "attributeName": "EcogPtMem_bl",
+        "attributeType": "numeric"
+      },
+      {
+        "attributeName": "EcogPtLang_bl",
+        "attributeType": "numeric"
+      },
+      {
+        "attributeName": "EcogPtwisspat_bl",
+        "attributeType": "numeric"
+      },
+      {
+        "attributeName": "EcogPtPlan_bl",
+        "attributeType": "numeric"
+      },
+      {
+        "attributeName": "EcogPtOrgan_bl",
+        "attributeType": "numeric"
+      },
+      {
+        "attributeName": "EcogPtDiwatt_bl",
+        "attributeType": "numeric"
+      },
+      {
+        "attributeName": "EcogPtTotal_bl",
+        "attributeType": "numeric"
+      },
+      {
+        "attributeName": "EcogSPMem_bl",
+        "attributeType": "numeric"
+      },
+      {
+        "attributeName": "EcogSPLang_bl",
+        "attributeType": "numeric"
+      },
+      {
+        "attributeName": "EcogSPwisspat_bl",
+        "attributeType": "numeric"
+      },
+      {
+        "attributeName": "EcogSPPlan_bl",
+        "attributeType": "numeric"
+      },
+      {
+        "attributeName": "EcogSPOrgan_bl",
+        "attributeType": "numeric"
+      },
+      {
+        "attributeName": "EcogSPDiwatt_bl",
+        "attributeType": "numeric"
+      },
+      {
+        "attributeName": "EcogSPTotal_bl",
+        "attributeType": "numeric"
+      },
+      {
+        "attributeName": "class",
+        "attributeType": "nominal"
+      },
+      {
+        "attributeName": "DX",
+        "attributeType": "nominal"
+      }
+    ],
+    "task": {
+      "taskType": "MT Regression",
+      "taskDescriptiveAttributes": [
+        "APOE4",
+        "wentricles_bl",
+        "Hippocampus_bl",
+        "WholeBrain_bl",
+        "Entorhinal_bl",
+        "Fusiform_bl",
+        "MidTemp_bl",
+        "ICw_bl",
+        "FDG_bl",
+        "Aw45_bl",
+        "CDRSB_bl",
+        "ADAS13_bl",
+        "MMSE_bl",
+        "RAwLT_immediate_bl",
+        "RAwLT_learning_bl",
+        "RAwLT_forgetting_bl",
+        "RAwLT_perc_forgetting_bl",
+        "FAQ_bl",
+        "MOCA_bl"
+      ],
+      "taskTargetAttributes": [
+        "EcogPtMem_bl",
+        "EcogPtLang_bl",
+        "EcogPtwisspat_bl",
+        "EcogPtPlan_bl",
+        "EcogPtOrgan_bl",
+        "EcogPtDiwatt_bl",
+        "EcogPtTotal_bl",
+        "EcogSPMem_bl",
+        "EcogSPLang_bl",
+        "EcogSPwisspat_bl",
+        "EcogSPPlan_bl",
+        "EcogSPOrgan_bl",
+        "EcogSPDiwatt_bl",
+        "EcogSPTotal_bl"
+      ],
+      "taskClusteringAttributes": [
+        "EcogPtMem_bl",
+        "EcogPtLang_bl",
+        "EcogPtwisspat_bl",
+        "EcogPtPlan_bl",
+        "EcogPtOrgan_bl",
+        "EcogPtDiwatt_bl",
+        "EcogPtTotal_bl",
+        "EcogSPMem_bl",
+        "EcogSPLang_bl",
+        "EcogSPwisspat_bl",
+        "EcogSPPlan_bl",
+        "EcogSPOrgan_bl",
+        "EcogSPDiwatt_bl",
+        "EcogSPTotal_bl"
+      ]
+    },
+    "query": "Get query information from docker environment variable....."
+  },
+  "algorithmSpecification": {
+    "name": "FIRE",
+    "parameters": "TODO",
+    "version": "1.0"
+  },
+  "ruleSetID": "Rule Set ID = null",
+  "rules": [
+    {
+      "ruleID": 2,
+      "conditions": [
+        {
+          "attribute": "CDRSB_bl",
+          "operator": "<=",
+          "value": 2.0
+        },
+        {
+          "attribute": "ADAS13_bl",
+          "operator": "<=",
+          "value": 15.0
+        },
+        {
+          "attribute": "Entorhinal_bl",
+          "operator": ">",
+          "value": 2172.0
+        },
+        {
+          "attribute": "FAQ_bl",
+          "operator": "<=",
+          "value": 0.0
+        },
+        {
+          "attribute": "RAwLT_immediate_bl",
+          "operator": ">",
+          "value": 29.0
+        },
+        {
+          "attribute": "MMSE_bl",
+          "operator": ">",
+          "value": 25.0
+        }
+      ],
+      "predictions": {
+        "targetPredictions": [
+          {
+            "attribute": "EcogPtMem_bl",
+            "value": 0.9587660036455337
+          },
+          {
+            "attribute": "EcogPtLang_bl",
+            "value": 0.613588472050879
+          },
+          {
+            "attribute": "EcogPtwisspat_bl",
+            "value": 0.5556248613231844
+          },
+          {
+            "attribute": "EcogPtPlan_bl",
+            "value": 0.638911547937085
+          },
+          {
+            "attribute": "EcogPtOrgan_bl",
+            "value": 0.7080109120126522
+          },
+          {
+            "attribute": "EcogPtDiwatt_bl",
+            "value": 0.8213286673928599
+          },
+          {
+            "attribute": "EcogPtTotal_bl",
+            "value": 0.7146017781745445
+          },
+          {
+            "attribute": "EcogSPMem_bl",
+            "value": 1.8207368409910865
+          },
+          {
+            "attribute": "EcogSPLang_bl",
+            "value": 1.1565250215202016
+          },
+          {
+            "attribute": "EcogSPwisspat_bl",
+            "value": 0.9380076838541557
+          },
+          {
+            "attribute": "EcogSPPlan_bl",
+            "value": 1.213995019326434
+          },
+          {
+            "attribute": "EcogSPOrgan_bl",
+            "value": 1.3507147681362668
+          },
+          {
+            "attribute": "EcogSPDiwatt_bl",
+            "value": 1.4870417171773271
+          },
+          {
+            "attribute": "EcogSPTotal_bl",
+            "value": 1.3295737666640735
+          }
+        ]
+      },
+      "statistics": {
+        "statisticsType": "train",
+        "numberOfExamples": 332.0
+      },
+      "weight": -0.05641922874900448
+    },
+    {
+      "ruleID": 3,
+      "conditions": [
+        {
+          "attribute": "MMSE_bl",
+          "operator": ">",
+          "value": 25.0
+        },
+        {
+          "attribute": "CDRSB_bl",
+          "operator": "<=",
+          "value": 2.0
+        },
+        {
+          "attribute": "wentricles_bl",
+          "operator": "<=",
+          "value": 67163.0
+        }
+      ],
+      "predictions": {
+        "targetPredictions": [
+          {
+            "attribute": "EcogPtMem_bl",
+            "value": 0.5694084695422761
+          },
+          {
+            "attribute": "EcogPtLang_bl",
+            "value": 0.32193590317406845
+          },
+          {
+            "attribute": "EcogPtwisspat_bl",
+            "value": 0.3666124239875553
+          },
+          {
+            "attribute": "EcogPtPlan_bl",
+            "value": 0.42401685282212953
+          },
+          {
+            "attribute": "EcogPtOrgan_bl",
+            "value": 0.3674077919837829
+          },
+          {
+            "attribute": "EcogPtDiwatt_bl",
+            "value": 0.3131488437631485
+          },
+          {
+            "attribute": "EcogPtTotal_bl",
+            "value": 0.40239708227549614
+          },
+          {
+            "attribute": "EcogSPMem_bl",
+            "value": 1.791745762382165
+          },
+          {
+            "attribute": "EcogSPLang_bl",
+            "value": 1.2289551034517057
+          },
+          {
+            "attribute": "EcogSPwisspat_bl",
+            "value": 1.2454073515198958
+          },
+          {
+            "attribute": "EcogSPPlan_bl",
+            "value": 1.407194554203598
+          },
+          {
+            "attribute": "EcogSPOrgan_bl",
+            "value": 1.511335919641912
+          },
+          {
+            "attribute": "EcogSPDiwatt_bl",
+            "value": 1.5726397773384881
+          },
+          {
+            "attribute": "EcogSPTotal_bl",
+            "value": 1.4535739640797223
+          }
+        ]
+      },
+      "statistics": {
+        "statisticsType": "train",
+        "numberOfExamples": 619.0
+      },
+      "weight": -0.05487817351386823
+    },
+    {
+      "ruleID": 4,
+      "conditions": [
+        {
+          "attribute": "FDG_bl",
+          "operator": ">",
+          "value": 5.85891
+        },
+        {
+          "attribute": "FAQ_bl",
+          "operator": "<=",
+          "value": 0.0
+        }
+      ],
+      "predictions": {
+        "targetPredictions": [
+          {
+            "attribute": "EcogPtMem_bl",
+            "value": 0.8851771584293202
+          },
+          {
+            "attribute": "EcogPtLang_bl",
+            "value": 0.5405021587889384
+          },
+          {
+            "attribute": "EcogPtwisspat_bl",
+            "value": 0.4353254664109949
+          },
+          {
+            "attribute": "EcogPtPlan_bl",
+            "value": 0.44234951908511877
+          },
+          {
+            "attribute": "EcogPtOrgan_bl",
+            "value": 0.5245551307756482
+          },
+          {
+            "attribute": "EcogPtDiwatt_bl",
+            "value": 0.4661137216604591
+          },
+          {
+            "attribute": "EcogPtTotal_bl",
+            "value": 0.5729801963996364
+          },
+          {
+            "attribute": "EcogSPMem_bl",
+            "value": 1.8207368409910865
+          },
+          {
+            "attribute": "EcogSPLang_bl",
+            "value": 1.1859107114754643
+          },
+          {
+            "attribute": "EcogSPwisspat_bl",
+            "value": 1.0326101320034167
+          },
+          {
+            "attribute": "EcogSPPlan_bl",
+            "value": 1.1976641240751793
+          },
+          {
+            "attribute": "EcogSPOrgan_bl",
+            "value": 1.3954973192059081
+          },
+          {
+            "attribute": "EcogSPDiwatt_bl",
+            "value": 1.4387277252762445
+          },
+          {
+            "attribute": "EcogSPTotal_bl",
+            "value": 1.3524532608544864
+          }
+        ]
+      },
+      "statistics": {
+        "statisticsType": "train",
+        "numberOfExamples": 387.0
+      },
+      "weight": -0.05319174799067743
+    },
+    {
+      "ruleID": 5,
+      "conditions": [
+        {
+          "attribute": "MOCA_bl",
+          "operator": ">",
+          "value": 21.0
+        },
+        {
+          "attribute": "RAwLT_immediate_bl",
+          "operator": ">",
+          "value": 29.0
+        },
+        {
+          "attribute": "FAQ_bl",
+          "operator": "<=",
+          "value": 0.0
+        }
+      ],
+      "predictions": {
+        "targetPredictions": [
+          {
+            "attribute": "EcogPtMem_bl",
+            "value": 0.9143310153181552
+          },
+          {
+            "attribute": "EcogPtLang_bl",
+            "value": 0.6685651224765432
+          },
+          {
+            "attribute": "EcogPtwisspat_bl",
+            "value": 0.5453686816284052
+          },
+          {
+            "attribute": "EcogPtPlan_bl",
+            "value": 0.6542346131163239
+          },
+          {
+            "attribute": "EcogPtOrgan_bl",
+            "value": 0.6469688309696929
+          },
+          {
+            "attribute": "EcogPtDiwatt_bl",
+            "value": 0.7753076548313597
+          },
+          {
+            "attribute": "EcogPtTotal_bl",
+            "value": 0.7044617564780817
+          },
+          {
+            "attribute": "EcogSPMem_bl",
+            "value": 1.8207368409910862
+          },
+          {
+            "attribute": "EcogSPLang_bl",
+            "value": 1.1992717120777618
+          },
+          {
+            "attribute": "EcogSPwisspat_bl",
+            "value": 0.9926959107010531
+          },
+          {
+            "attribute": "EcogSPPlan_bl",
+            "value": 1.1958779835668467
+          },
+          {
+            "attribute": "EcogSPOrgan_bl",
+            "value": 1.3935973364714522
+          },
+          {
+            "attribute": "EcogSPDiwatt_bl",
+            "value": 1.5117283501055463
+          },
+          {
+            "attribute": "EcogSPTotal_bl",
+            "value": 1.357778961408173
+          }
+        ]
+      },
+      "statistics": {
+        "statisticsType": "train",
+        "numberOfExamples": 367.0
+      },
+      "weight": -0.0571214849893374
+    },
+    {
+      "ruleID": 6,
+      "conditions": [
+        {
+          "attribute": "ADAS13_bl",
+          "operator": "<=",
+          "value": 18.0
+        },
+        {
+          "attribute": "MMSE_bl",
+          "operator": ">",
+          "value": 25.0
+        }
+      ],
+      "predictions": {
+        "targetPredictions": [
+          {
+            "attribute": "EcogPtMem_bl",
+            "value": 0.5272790054928436
+          },
+          {
+            "attribute": "EcogPtLang_bl",
+            "value": 0.2912159773054401
+          },
+          {
+            "attribute": "EcogPtwisspat_bl",
+            "value": 0.48478165089437597
+          },
+          {
+            "attribute": "EcogPtPlan_bl",
+            "value": 0.48814636099017916
+          },
+          {
+            "attribute": "EcogPtOrgan_bl",
+            "value": 0.36938233674806525
+          },
+          {
+            "attribute": "EcogPtDiwatt_bl",
+            "value": 0.31016810154616214
+          },
+          {
+            "attribute": "EcogPtTotal_bl",
+            "value": 0.4171095283542257
+          },
+          {
+            "attribute": "EcogSPMem_bl",
+            "value": 1.8064046798070652
+          },
+          {
+            "attribute": "EcogSPLang_bl",
+            "value": 1.2884466423026946
+          },
+          {
+            "attribute": "EcogSPwisspat_bl",
+            "value": 1.225929254713007
+          },
+          {
+            "attribute": "EcogSPPlan_bl",
+            "value": 1.405713623133113
+          },
+          {
+            "attribute": "EcogSPOrgan_bl",
+            "value": 1.4705170028737833
+          },
+          {
+            "attribute": "EcogSPDiwatt_bl",
+            "value": 1.5263290207343467
+          },
+          {
+            "attribute": "EcogSPTotal_bl",
+            "value": 1.4535739640797223
+          }
+        ]
+      },
+      "statistics": {
+        "statisticsType": "train",
+        "numberOfExamples": 618.0
+      },
+      "weight": -0.02880118115002533
+    },
+    {
+      "ruleID": 7,
+      "conditions": [
+        {
+          "attribute": "Hippocampus_bl",
+          "operator": ">",
+          "value": 6494.402319
+        },
+        {
+          "attribute": "ADAS13_bl",
+          "operator": "<=",
+          "value": 15.0
+        },
+        {
+          "attribute": "FAQ_bl",
+          "operator": "<=",
+          "value": 0.0
+        },
+        {
+          "attribute": "CDRSB_bl",
+          "operator": "<=",
+          "value": 1.5
+        },
+        {
+          "attribute": "wentricles_bl",
+          "operator": "<=",
+          "value": 83689.0
+        }
+      ],
+      "predictions": {
+        "targetPredictions": [
+          {
+            "attribute": "EcogPtMem_bl",
+            "value": 0.955123312401281
+          },
+          {
+            "attribute": "EcogPtLang_bl",
+            "value": 0.4828022219709474
+          },
+          {
+            "attribute": "EcogPtwisspat_bl",
+            "value": 0.48729143574169215
+          },
+          {
+            "attribute": "EcogPtPlan_bl",
+            "value": 0.5861085696546675
+          },
+          {
+            "attribute": "EcogPtOrgan_bl",
+            "value": 0.6371325952685504
+          },
+          {
+            "attribute": "EcogPtDiwatt_bl",
+            "value": 0.7201805817837256
+          },
+          {
+            "attribute": "EcogPtTotal_bl",
+            "value": 0.6430170888904091
+          },
+          {
+            "attribute": "EcogSPMem_bl",
+            "value": 1.8207368409910865
+          },
+          {
+            "attribute": "EcogSPLang_bl",
+            "value": 1.1561339028117619
+          },
+          {
+            "attribute": "EcogSPwisspat_bl",
+            "value": 0.9791614281242257
+          },
+          {
+            "attribute": "EcogSPPlan_bl",
+            "value": 1.2600796806584338
+          },
+          {
+            "attribute": "EcogSPOrgan_bl",
+            "value": 1.4014472333938357
+          },
+          {
+            "attribute": "EcogSPDiwatt_bl",
+            "value": 1.5451558559416079
+          },
+          {
+            "attribute": "EcogSPTotal_bl",
+            "value": 1.3580938423747806
+          }
+        ]
+      },
+      "statistics": {
+        "statisticsType": "train",
+        "numberOfExamples": 321.0
+      },
+      "weight": -0.05728365006738713
+    },
+    {
+      "ruleID": 8,
+      "conditions": [
+        {
+          "attribute": "FAQ_bl",
+          "operator": "<=",
+          "value": 5.0
+        },
+        {
+          "attribute": "ADAS13_bl",
+          "operator": "<=",
+          "value": 14.0
+        },
+        {
+          "attribute": "MidTemp_bl",
+          "operator": ">",
+          "value": 16425.0
+        }
+      ],
+      "predictions": {
+        "targetPredictions": [
+          {
+            "attribute": "EcogPtMem_bl",
+            "value": 0.7037420679973642
+          },
+          {
+            "attribute": "EcogPtLang_bl",
+            "value": 0.5231599788708344
+          },
+          {
+            "attribute": "EcogPtwisspat_bl",
+            "value": 0.532760403159644
+          },
+          {
+            "attribute": "EcogPtPlan_bl",
+            "value": 0.48845316247259507
+          },
+          {
+            "attribute": "EcogPtOrgan_bl",
+            "value": 0.43680700825356394
+          },
+          {
+            "attribute": "EcogPtDiwatt_bl",
+            "value": 0.5331620277354306
+          },
+          {
+            "attribute": "EcogPtTotal_bl",
+            "value": 0.5483510205874889
+          },
+          {
+            "attribute": "EcogSPMem_bl",
+            "value": 1.7979290720761165
+          },
+          {
+            "attribute": "EcogSPLang_bl",
+            "value": 1.3018941515370555
+          },
+          {
+            "attribute": "EcogSPwisspat_bl",
+            "value": 1.124734522761501
+          },
+          {
+            "attribute": "EcogSPPlan_bl",
+            "value": 1.3485048192590814
+          },
+          {
+            "attribute": "EcogSPOrgan_bl",
+            "value": 1.54607456761994
+          },
+          {
+            "attribute": "EcogSPDiwatt_bl",
+            "value": 1.5948826250498354
+          },
+          {
+            "attribute": "EcogSPTotal_bl",
+            "value": 1.4535739640797223
+          }
+        ]
+      },
+      "statistics": {
+        "statisticsType": "train",
+        "numberOfExamples": 512.0
+      },
+      "weight": -0.05906934561064749
+    },
+    {
+      "ruleID": 9,
+      "conditions": [
+        {
+          "attribute": "FAQ_bl",
+          "operator": "<=",
+          "value": 0.0
+        },
+        {
+          "attribute": "RAwLT_immediate_bl",
+          "operator": ">",
+          "value": 29.0
+        }
+      ],
+      "predictions": {
+        "targetPredictions": [
+          {
+            "attribute": "EcogPtMem_bl",
+            "value": 0.8346775843392753
+          },
+          {
+            "attribute": "EcogPtLang_bl",
+            "value": 0.4474531030330583
+          },
+          {
+            "attribute": "EcogPtwisspat_bl",
+            "value": 0.40698443367674003
+          },
+          {
+            "attribute": "EcogPtPlan_bl",
+            "value": 0.6408677294903056
+          },
+          {
+            "attribute": "EcogPtOrgan_bl",
+            "value": 0.5411088047482943
+          },
+          {
+            "attribute": "EcogPtDiwatt_bl",
+            "value": 0.5937716076269487
+          },
+          {
+            "attribute": "EcogPtTotal_bl",
+            "value": 0.5757965709868689
+          },
+          {
+            "attribute": "EcogSPMem_bl",
+            "value": 1.8207368409910862
+          },
+          {
+            "attribute": "EcogSPLang_bl",
+            "value": 1.1322823437938478
+          },
+          {
+            "attribute": "EcogSPwisspat_bl",
+            "value": 0.9900185037888563
+          },
+          {
+            "attribute": "EcogSPPlan_bl",
+            "value": 1.2237009305197573
+          },
+          {
+            "attribute": "EcogSPOrgan_bl",
+            "value": 1.4087893465356949
+          },
+          {
+            "attribute": "EcogSPDiwatt_bl",
+            "value": 1.5766329384749411
+          },
+          {
+            "attribute": "EcogSPTotal_bl",
+            "value": 1.3545487250917383
+          }
+        ]
+      },
+      "statistics": {
+        "statisticsType": "train",
+        "numberOfExamples": 382.0
+      },
+      "weight": -0.05511322213586084
+    },
+    {
+      "ruleID": 10,
+      "conditions": [
+        {
+          "attribute": "MOCA_bl",
+          "operator": ">",
+          "value": 23.0
+        },
+        {
+          "attribute": "ADAS13_bl",
+          "operator": "<=",
+          "value": 15.0
+        }
+      ],
+      "predictions": {
+        "targetPredictions": [
+          {
+            "attribute": "EcogPtMem_bl",
+            "value": 0.9454943387868251
+          },
+          {
+            "attribute": "EcogPtLang_bl",
+            "value": 0.5975280190790014
+          },
+          {
+            "attribute": "EcogPtwisspat_bl",
+            "value": 0.553960809243094
+          },
+          {
+            "attribute": "EcogPtPlan_bl",
+            "value": 0.5873646925681563
+          },
+          {
+            "attribute": "EcogPtOrgan_bl",
+            "value": 0.6635132233086315
+          },
+          {
+            "attribute": "EcogPtDiwatt_bl",
+            "value": 0.5296888050696181
+          },
+          {
+            "attribute": "EcogPtTotal_bl",
+            "value": 0.6668183914587317
+          },
+          {
+            "attribute": "EcogSPMem_bl",
+            "value": 1.8207368409910865
+          },
+          {
+            "attribute": "EcogSPLang_bl",
+            "value": 1.278898817277116
+          },
+          {
+            "attribute": "EcogSPwisspat_bl",
+            "value": 1.1195217721595148
+          },
+          {
+            "attribute": "EcogSPPlan_bl",
+            "value": 1.1714123642772374
+          },
+          {
+            "attribute": "EcogSPOrgan_bl",
+            "value": 1.3253267905464101
+          },
+          {
+            "attribute": "EcogSPDiwatt_bl",
+            "value": 1.5219401246531548
+          },
+          {
+            "attribute": "EcogSPTotal_bl",
+            "value": 1.386498219256982
+          }
+        ]
+      },
+      "statistics": {
+        "statisticsType": "train",
+        "numberOfExamples": 420.0
+      },
+      "weight": -0.0486036813652731
+    },
+    {
+      "ruleID": 11,
+      "conditions": [
+        {
+          "attribute": "FAQ_bl",
+          "operator": "<=",
+          "value": 0.0
+        },
+        {
+          "attribute": "MOCA_bl",
+          "operator": ">",
+          "value": 19.0
+        },
+        {
+          "attribute": "ADAS13_bl",
+          "operator": "<=",
+          "value": 15.0
+        },
+        {
+          "attribute": "APOE4",
+          "operator": "<=",
+          "value": 1.0
+        }
+      ],
+      "predictions": {
+        "targetPredictions": [
+          {
+            "attribute": "EcogPtMem_bl",
+            "value": 0.9321915396689953
+          },
+          {
+            "attribute": "EcogPtLang_bl",
+            "value": 0.5742675804364443
+          },
+          {
+            "attribute": "EcogPtwisspat_bl",
+            "value": 0.5585787464135099
+          },
+          {
+            "attribute": "EcogPtPlan_bl",
+            "value": 0.5931260537208973
+          },
+          {
+            "attribute": "EcogPtOrgan_bl",
+            "value": 0.652075062712814
+          },
+          {
+            "attribute": "EcogPtDiwatt_bl",
+            "value": 0.6487393631029881
+          },
+          {
+            "attribute": "EcogPtTotal_bl",
+            "value": 0.6681938924574975
+          },
+          {
+            "attribute": "EcogSPMem_bl",
+            "value": 1.8207368409910867
+          },
+          {
+            "attribute": "EcogSPLang_bl",
+            "value": 1.180210845382003
+          },
+          {
+            "attribute": "EcogSPwisspat_bl",
+            "value": 0.9707751084247785
+          },
+          {
+            "attribute": "EcogSPPlan_bl",
+            "value": 1.2967573014484013
+          },
+          {
+            "attribute": "EcogSPOrgan_bl",
+            "value": 1.4563679307088497
+          },
+          {
+            "attribute": "EcogSPDiwatt_bl",
+            "value": 1.6079367052625904
+          },
+          {
+            "attribute": "EcogSPTotal_bl",
+            "value": 1.380174863672574
+          }
+        ]
+      },
+      "statistics": {
+        "statisticsType": "train",
+        "numberOfExamples": 342.0
+      },
+      "weight": -0.0586780988592179
+    }
+  ],
+  "interpretationMode": "WeightedUnordered",
+  "globalModel": [],
+  "statistics": [
+    {
+      "statisticsType": "train",
+      "numberOfExamples": 916,
+      "targetErrors": [
+        {
+          "errorType": "MAE",
+          "errorValues": [
+            {
+              "attribute": "EcogPtMem_bl",
+              "value": 0.5386709255836845
+            },
+            {
+              "attribute": "EcogPtLang_bl",
+              "value": 0.48908694822308063
+            },
+            {
+              "attribute": "EcogPtwisspat_bl",
+              "value": 0.3739293291486753
+            },
+            {
+              "attribute": "EcogPtPlan_bl",
+              "value": 0.38265853812339357
+            },
+            {
+              "attribute": "EcogPtOrgan_bl",
+              "value": 0.44688681435302535
+            },
+            {
+              "attribute": "EcogPtDiwatt_bl",
+              "value": 0.5571520697756106
+            },
+            {
+              "attribute": "EcogPtTotal_bl",
+              "value": 0.37228683199484547
+            },
+            {
+              "attribute": "EcogSPMem_bl",
+              "value": 0.5683429511961542
+            },
+            {
+              "attribute": "EcogSPLang_bl",
+              "value": 0.44892578513759174
+            },
+            {
+              "attribute": "EcogSPwisspat_bl",
+              "value": 0.4075299024651217
+            },
+            {
+              "attribute": "EcogSPPlan_bl",
+              "value": 0.45788002330947103
+            },
+            {
+              "attribute": "EcogSPOrgan_bl",
+              "value": 0.5234566202607581
+            },
+            {
+              "attribute": "EcogSPDiwatt_bl",
+              "value": 0.5954375281001272
+            },
+            {
+              "attribute": "EcogSPTotal_bl",
+              "value": 0.4126750768711018
+            }
+          ]
+        },
+        {
+          "errorType": "MSE",
+          "errorValues": [
+            {
+              "attribute": "EcogPtMem_bl",
+              "value": 0.4410323104735989
+            },
+            {
+              "attribute": "EcogPtLang_bl",
+              "value": 0.3664549070880638
+            },
+            {
+              "attribute": "EcogPtwisspat_bl",
+              "value": 0.26045978280996157
+            },
+            {
+              "attribute": "EcogPtPlan_bl",
+              "value": 0.26419124927130916
+            },
+            {
+              "attribute": "EcogPtOrgan_bl",
+              "value": 0.3420930607453709
+            },
+            {
+              "attribute": "EcogPtDiwatt_bl",
+              "value": 0.494193131886647
+            },
+            {
+              "attribute": "EcogPtTotal_bl",
+              "value": 0.2409939773402257
+            },
+            {
+              "attribute": "EcogSPMem_bl",
+              "value": 0.532498928423493
+            },
+            {
+              "attribute": "EcogSPLang_bl",
+              "value": 0.4022697650985857
+            },
+            {
+              "attribute": "EcogSPwisspat_bl",
+              "value": 0.3801801951872468
+            },
+            {
+              "attribute": "EcogSPPlan_bl",
+              "value": 0.45807208050750614
+            },
+            {
+              "attribute": "EcogSPOrgan_bl",
+              "value": 0.538681756805195
+            },
+            {
+              "attribute": "EcogSPDiwatt_bl",
+              "value": 0.6170952489400888
+            },
+            {
+              "attribute": "EcogSPTotal_bl",
+              "value": 0.35359299065058475
+            }
+          ]
+        },
+        {
+          "errorType": "RMSE",
+          "errorValues": [
+            {
+              "attribute": "EcogPtMem_bl",
+              "value": 0.6641026354966519
+            },
+            {
+              "attribute": "EcogPtLang_bl",
+              "value": 0.6053551908491938
+            },
+            {
+              "attribute": "EcogPtwisspat_bl",
+              "value": 0.5103526063516886
+            },
+            {
+              "attribute": "EcogPtPlan_bl",
+              "value": 0.5139953786478135
+            },
+            {
+              "attribute": "EcogPtOrgan_bl",
+              "value": 0.5848872205351823
+            },
+            {
+              "attribute": "EcogPtDiwatt_bl",
+              "value": 0.7029887139112881
+            },
+            {
+              "attribute": "EcogPtTotal_bl",
+              "value": 0.4909113742216875
+            },
+            {
+              "attribute": "EcogSPMem_bl",
+              "value": 0.7297252417338275
+            },
+            {
+              "attribute": "EcogSPLang_bl",
+              "value": 0.6342474005453911
+            },
+            {
+              "attribute": "EcogSPwisspat_bl",
+              "value": 0.6165875405708802
+            },
+            {
+              "attribute": "EcogSPPlan_bl",
+              "value": 0.6768102248839819
+            },
+            {
+              "attribute": "EcogSPOrgan_bl",
+              "value": 0.7339494238741489
+            },
+            {
+              "attribute": "EcogSPDiwatt_bl",
+              "value": 0.7855541031272696
+            },
+            {
+              "attribute": "EcogSPTotal_bl",
+              "value": 0.5946368561152132
+            }
+          ]
+        },
+        {
+          "errorType": "weighted RMSE",
+          "errorValues": [
+            {
+              "attribute": "EcogPtMem_bl",
+              "value": 0.9279307242779135
+            },
+            {
+              "attribute": "EcogPtLang_bl",
+              "value": 0.9644141434438814
+            },
+            {
+              "attribute": "EcogPtwisspat_bl",
+              "value": 0.9549302080488817
+            },
+            {
+              "attribute": "EcogPtPlan_bl",
+              "value": 0.9427788521800194
+            },
+            {
+              "attribute": "EcogPtOrgan_bl",
+              "value": 0.9563219185375211
+            },
+            {
+              "attribute": "EcogPtDiwatt_bl",
+              "value": 0.9682951572170534
+            },
+            {
+              "attribute": "EcogPtTotal_bl",
+              "value": 0.9317215072258648
+            },
+            {
+              "attribute": "EcogSPMem_bl",
+              "value": 0.8015713477150429
+            },
+            {
+              "attribute": "EcogSPLang_bl",
+              "value": 0.8604082947150833
+            },
+            {
+              "attribute": "EcogSPwisspat_bl",
+              "value": 0.8807474592079668
+            },
+            {
+              "attribute": "EcogSPPlan_bl",
+              "value": 0.8648945897159702
+            },
+            {
+              "attribute": "EcogSPOrgan_bl",
+              "value": 0.857925901574445
+            },
+            {
+              "attribute": "EcogSPDiwatt_bl",
+              "value": 0.8611096854781594
+            },
+            {
+              "attribute": "EcogSPTotal_bl",
+              "value": 0.8181721340773798
+            }
+          ]
+        },
+        {
+          "errorType": "Pearson correlation coefficient",
+          "errorValues": [
+            {
+              "attribute": "EcogPtMem_bl",
+              "value": 0.4044330974857785
+            },
+            {
+              "attribute": "EcogPtLang_bl",
+              "value": 0.2884342084202297
+            },
+            {
+              "attribute": "EcogPtwisspat_bl",
+              "value": 0.3213559504555328
+            },
+            {
+              "attribute": "EcogPtPlan_bl",
+              "value": 0.36220996692328317
+            },
+            {
+              "attribute": "EcogPtOrgan_bl",
+              "value": 0.31397731309111265
+            },
+            {
+              "attribute": "EcogPtDiwatt_bl",
+              "value": 0.26954196151782756
+            },
+            {
+              "attribute": "EcogPtTotal_bl",
+              "value": 0.39326327170198705
+            },
+            {
+              "attribute": "EcogSPMem_bl",
+              "value": 0.7067254186466633
+            },
+            {
+              "attribute": "EcogSPLang_bl",
+              "value": 0.588060548742622
+            },
+            {
+              "attribute": "EcogSPwisspat_bl",
+              "value": 0.543552146462576
+            },
+            {
+              "attribute": "EcogSPPlan_bl",
+              "value": 0.5783249235777671
+            },
+            {
+              "attribute": "EcogSPOrgan_bl",
+              "value": 0.5929310333417223
+            },
+            {
+              "attribute": "EcogSPDiwatt_bl",
+              "value": 0.583482462772093
+            },
+            {
+              "attribute": "EcogSPTotal_bl",
+              "value": 0.6775809460762963
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

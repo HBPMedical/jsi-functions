@@ -34,10 +34,10 @@ library(foreign);
 # Initialisation
 initial_wd <- getwd();
 #varnames <- Sys.getenv("PARAM_varnames");
-varnames <- "DX";
+varnames <- "EcogPtMem_bl,EcogPtLang_bl,EcogPtwisspat_bl,EcogPtPlan_bl,EcogPtOrgan_bl,EcogPtDiwatt_bl,EcogPtTotal_bl,EcogSPMem_bl,EcogSPLang_bl,EcogSPwisspat_bl,EcogSPPlan_bl,EcogSPOrgan_bl,EcogSPDiwatt_bl,EcogSPTotal_bl";
 
 #covarnames <- Sys.getenv("PARAM_covarnames");
-covarnames <- "APOE4,wentricles_bl,Hippocampus_bl,WholeBrain_bl,Entorhinal_bl,Fusiform_bl,MidTemp_bl,ICw_bl,FDG_bl,Aw45_bl,CDRSB_bl,ADAS13_bl,MMSE_bl,RAwLT_immediate_bl,RAwLT_learning_bl,RAwLT_forgetting_bl,RAwLT_perc_forgetting_bl,FAQ_bl,MOCA_bl,EcogPtMem_bl,EcogPtLang_bl,EcogPtwisspat_bl,EcogPtPlan_bl,EcogPtOrgan_bl,EcogPtDiwatt_bl,EcogPtTotal_bl,EcogSPMem_bl,EcogSPLang_bl,EcogSPwisspat_bl,EcogSPPlan_bl,EcogSPOrgan_bl,EcogSPDiwatt_bl,EcogSPTotal_bl";
+covarnames <- "APOE4,wentricles_bl,Hippocampus_bl,WholeBrain_bl,Entorhinal_bl,Fusiform_bl,MidTemp_bl,ICw_bl,FDG_bl,Aw45_bl,CDRSB_bl,ADAS13_bl,MMSE_bl,RAwLT_immediate_bl,RAwLT_learning_bl,RAwLT_forgetting_bl,RAwLT_perc_forgetting_bl,FAQ_bl,MOCA_bl";
 
 # Fetch the data and store it in an arff file
 #mydata <- fetchData();
@@ -82,7 +82,7 @@ settingsRules <- c(
 	"OptRuleWeightThreshold = 0",
 	"ComputeDispersion = No",
 	"OptGDGradTreshold = 0.0",
-	"OptGDMaxNbWeights = 100",
+	"OptGDMaxNbWeights = 10",
 	"OptLinearTermsTruncate = No",
 	"OptDefaultShiftPred = Yes",
 	"OptGDEarlyTTryStop = Yes",
@@ -91,7 +91,7 @@ settingsRules <- c(
 	"OptAddLinearTerms = YesSaveMemory",
 	"OptAddLinearTerms = Yes",
 	"RuleAddingMethod = Always",
-	"PrintAllRules = Yes",
+	"PrintAllRules = No",
 	"OptGDIsDynStepsize = Yes",
 	"OptGDStepSize = 1");
 
@@ -106,9 +106,9 @@ settingsEnsemble <- c(
 	"PrintAllModels = No",
 	"EnsembleRandomDepth = Yes");
 	
-writeLines(settingsData);
-writeLines(settingsAttributes);
-writeLines(settingsTree);
+writeLines(settingsData, setFile);
+writeLines(settingsAttributes, setFile);
+writeLines(settingsTree, setFile);
 writeLines(settingsRules, setFile);
 writeLines(settingsConstraints, setFile);
 writeLines(settingsEnsemble,setFile);
