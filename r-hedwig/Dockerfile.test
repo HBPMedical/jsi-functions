@@ -1,0 +1,6 @@
+FROM hbpmip/r-hedwig:latest
+
+MAINTAINER anze.vavpetic@ijs.si
+
+COPY tests/testthat.R /src/tests/
+COPY tests/testthat/ /src/tests/testthat/

@@ -1,0 +1,18 @@
+r-hedwig:
+  build: Dockerfile
+  image: hbpmip/r-hedwig
+  pre:
+    - echo "Preparing r-hedwig"
+  post:
+    - echo "Finished r-hedwig"
+
+r-hedwig-test:
+  build: Dockerfile.test
+  image: hbpmip/r-hedwig
+  pre:
+    - echo "Preparing r-hedwig"
+  post:
+    - echo "Finished r-hedwig"
+  test:
+    - tests/test.sh
+
