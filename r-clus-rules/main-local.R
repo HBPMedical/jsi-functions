@@ -51,14 +51,72 @@ target_atts_list <- paste(target_atts, collapse=",");
 descriptive_atts_list <- paste(descriptive_atts, collapse=",");
 
 setFile <- file("mydata.s", open="w");
-writeLines("[Data]", setFile);
-writeLines("File = mydata.arff", setFile);
-writeLines("RemoveMissingTarget = Yes", setFile);
-writeLines("\n[Attributes]", setFile);
-writeLines(paste("Target =", target_atts_list, collapse=""), setFile);
-writeLines(paste("Descriptive =", descriptive_atts_list, collapse=""), setFile);
-writeLines("\n[Tree]", setFile);
-writeLines("ConvertToRules = Leaves", setFile);
+
+# setting file sections
+settingsData <- c(
+	"[Data]",
+	"File = mydata.arff",
+	"RemoveMissingTarget = Yes");
+	
+settingsAttributes <- c(
+	"\n[Attributes]",
+	paste("Target =", target_atts_list, collapse=""),
+	paste("Descriptive =", descriptive_atts_list, collapse=""));
+
+settingsTree <- c(
+	"\n[Tree]",
+	"ConvertToRules = Leaves",
+	"Heuristic = VarianceReduction");
+
+settingsRules <- c(
+	"\n[Rules]",
+	"CoveringMethod = RulesFromTree",
+	"PredictionMethod = GDOptimized",
+	"OptOmitRulePredictions = Yes",
+	"OptGDEarlyStopAmount = 0.333333",
+	"OptGDMTGradientCombine = Avg",
+	"OptNormalization = Yes",
+	"PrintRuleWiseErrors = No",
+	"OptGDMaxIter = 100",
+	"OptGDNbOfTParameterTry = 11",
+	"OptRuleWeightThreshold = 0",
+	"ComputeDispersion = No",
+	"OptGDGradTreshold = 0.0",
+	"OptGDMaxNbWeights = 100",
+	"OptLinearTermsTruncate = No",
+	"OptDefaultShiftPred = Yes",
+	"OptGDEarlyTTryStop = Yes",
+	"OptGDEarlyStopTreshold = 1.1",
+	"CoveringWeight = 0.1",
+	"OptAddLinearTerms = YesSaveMemory",
+	"OptAddLinearTerms = Yes",
+	"RuleAddingMethod = Always",
+	"PrintAllRules = Yes",
+	"OptGDIsDynStepsize = Yes",
+	"OptGDStepSize = 1");
+
+settingsConstraints <- c(
+	"\n[Constraints]",
+	"MaxDepth = 10");
+	
+settingsEnsemble <- c(
+	"\n[Ensemble]",
+	"EnsembleMethod = RForest",
+	"Iterations = 100",
+	"PrintAllModels = No",
+	"EnsembleRandomDepth = Yes");
+	
+writeLines(settingsData);
+writeLines(settingsAttributes);
+writeLines(settingsTree);
+writeLines(settingsRules, setFile);
+writeLines(settingsConstraints, setFile);
+writeLines(settingsEnsemble,setFile);
+
+
+
+
+
 close(setFile);
 
 # Perform the computation
