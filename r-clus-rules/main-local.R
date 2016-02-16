@@ -62,11 +62,11 @@ writeLines("ConvertToRules = Leaves", setFile);
 close(setFile);
 
 # Perform the computation
-system("java -cp clus.jar:commons-math-1.0.jar:jgap.jar:weka.jar clus.Clus mydata.s", wait=TRUE, ignore.stdout=TRUE, ignore.stderr=FALSE);
+system("java -jar Clus.jar -rules mydata.s", wait=TRUE, ignore.stdout=TRUE, ignore.stderr=FALSE);
 
 # Collect results
-resFile <- file("mydata.out", open="r");
+resFile <- file("model.json", open="r");
 res <- readLines(resFile);
 
 # Store results in the database
-#saveResults(toJSON(res, auto_unbox=TRUE, digits=8));
+#saveResults(res);
