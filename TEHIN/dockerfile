@@ -1,0 +1,26 @@
+FROM hbpmip/r-job:239492a
+
+MAINTAINER jan.kralj@ijs.si
+
+LABEL eu.humanbrainproject.function=hedwig \
+      eu.humanbrainproject.function.location=node \
+      eu.humanbrainproject.function.version=0.3.0 \
+      eu.humanbrainproject.function.author="Jan kralj" \
+      eu.humanbrainproject.function.organisation="JSI" \
+      eu.humanbrainproject.function.date="2016-02-12"
+
+# Temporary fix for the proxy issue
+RUN echo "Acquire::http::Proxy \"false\";" > /etc/apt/apt.conf.d/01proxy
+# End temporary fix
+
+RUN apt-get update && apt-get install -y \
+	python-dev \
+	python-pip \
+	python-scipy \
+	git \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN git clone http://source.ijs.si/jkralj/text-enriched-network-analysis.git /src/tehin
+WORKDIR /src/tehin
+RUN pip install -r requirements.txt
+RUN python setup.py install
