@@ -12,6 +12,8 @@
 #                       (target variable) names
 #      PARAM_covarnames : Column separated list of covariables
 #                         (descriptive variables) names
+#      PARAM_OptGDMaxNbWeights : Positive integer representing maximum number of induced rules
+#
 # - Execution context:
 #      JOB_ID : ID of the job
 #      NODE : Node used for the execution of the script
@@ -28,7 +30,7 @@
 #
 
 #library(hbpjdbcconnect);
-library(jsonlite);
+#library(jsonlite);
 library(foreign);
 
 # Initialisation
@@ -38,6 +40,14 @@ varnames <- "EcogPtMem_bl,EcogPtLang_bl,EcogPtwisspat_bl,EcogPtPlan_bl,EcogPtOrg
 
 #covarnames <- Sys.getenv("PARAM_covarnames");
 covarnames <- "APOE4,wentricles_bl,Hippocampus_bl,WholeBrain_bl,Entorhinal_bl,Fusiform_bl,MidTemp_bl,ICw_bl,FDG_bl,Aw45_bl,CDRSB_bl,ADAS13_bl,MMSE_bl,RAwLT_immediate_bl,RAwLT_learning_bl,RAwLT_forgetting_bl,RAwLT_perc_forgetting_bl,FAQ_bl,MOCA_bl";
+
+#number of rules
+#nbRules <- Sys.getenv("PARAM_OptGDMaxNbWeights");
+nbRules <- 10;
+
+if (nbRules < 1) {
+  nbRules <- 10; # default to 10 rules if settings are wrong
+}
 
 # Fetch the data and store it in an arff file
 #mydata <- fetchData();
@@ -82,7 +92,7 @@ settingsRules <- c(
 	"OptRuleWeightThreshold = 0",
 	"ComputeDispersion = No",
 	"OptGDGradTreshold = 0.0",
-	"OptGDMaxNbWeights = 10",
+	paste("OptGDMaxNbWeights = ", toString(nbRules), sep=""),
 	"OptLinearTermsTruncate = No",
 	"OptDefaultShiftPred = Yes",
 	"OptGDEarlyTTryStop = Yes",
