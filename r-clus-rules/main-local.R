@@ -101,7 +101,7 @@ settingsRules <- c(
 	"OptAddLinearTerms = YesSaveMemory",
 	"OptAddLinearTerms = Yes",
 	"RuleAddingMethod = Always",
-	"PrintAllRules = No",
+	"PrintAllRules = Yes",
 	"OptGDIsDynStepsize = Yes",
 	"OptGDStepSize = 1");
 
@@ -116,16 +116,17 @@ settingsEnsemble <- c(
 	"PrintAllModels = No",
 	"EnsembleRandomDepth = Yes");
 	
+settingsOutput <- c(
+	"\n[Output]",
+	"OutputJSONModel = Yes");
+		
 writeLines(settingsData, setFile);
 writeLines(settingsAttributes, setFile);
 writeLines(settingsTree, setFile);
 writeLines(settingsRules, setFile);
 writeLines(settingsConstraints, setFile);
 writeLines(settingsEnsemble,setFile);
-
-
-
-
+writeLines(settingsOutput,setFile);
 
 close(setFile);
 
