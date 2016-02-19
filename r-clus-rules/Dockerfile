@@ -10,10 +10,7 @@ LABEL eu.humanbrainproject.function=summary-stats \
       eu.humanbrainproject.function.date="2016-01-21"
 
 COPY main.R /src/
-COPY clus.jar /src/
-COPY commons-math-1.0.jar /src/
-COPY jgap.jar /src/
-
+COPY Clus.jar /src/
 
 
 RUN installGithub.r &lt;foreign&gt;

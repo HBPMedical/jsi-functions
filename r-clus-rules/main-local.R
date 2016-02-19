@@ -12,6 +12,8 @@
 #                       (target variable) names
 #      PARAM_covarnames : Column separated list of covariables
 #                         (descriptive variables) names
+#      PARAM_OptGDMaxNbWeights : Positive integer representing maximum number of induced rules
+#
 # - Execution context:
 #      JOB_ID : ID of the job
 #      NODE : Node used for the execution of the script
@@ -28,16 +30,24 @@
 #
 
 #library(hbpjdbcconnect);
-library(jsonlite);
+#library(jsonlite);
 library(foreign);
 
 # Initialisation
 initial_wd <- getwd();
 #varnames <- Sys.getenv("PARAM_varnames");
-varnames <- "DX";
+varnames <- "EcogPtMem_bl,EcogPtLang_bl,EcogPtwisspat_bl,EcogPtPlan_bl,EcogPtOrgan_bl,EcogPtDiwatt_bl,EcogPtTotal_bl,EcogSPMem_bl,EcogSPLang_bl,EcogSPwisspat_bl,EcogSPPlan_bl,EcogSPOrgan_bl,EcogSPDiwatt_bl,EcogSPTotal_bl";
 
 #covarnames <- Sys.getenv("PARAM_covarnames");
-covarnames <- "APOE4,wentricles_bl,Hippocampus_bl,WholeBrain_bl,Entorhinal_bl,Fusiform_bl,MidTemp_bl,ICw_bl,FDG_bl,Aw45_bl,CDRSB_bl,ADAS13_bl,MMSE_bl,RAwLT_immediate_bl,RAwLT_learning_bl,RAwLT_forgetting_bl,RAwLT_perc_forgetting_bl,FAQ_bl,MOCA_bl,EcogPtMem_bl,EcogPtLang_bl,EcogPtwisspat_bl,EcogPtPlan_bl,EcogPtOrgan_bl,EcogPtDiwatt_bl,EcogPtTotal_bl,EcogSPMem_bl,EcogSPLang_bl,EcogSPwisspat_bl,EcogSPPlan_bl,EcogSPOrgan_bl,EcogSPDiwatt_bl,EcogSPTotal_bl";
+covarnames <- "APOE4,wentricles_bl,Hippocampus_bl,WholeBrain_bl,Entorhinal_bl,Fusiform_bl,MidTemp_bl,ICw_bl,FDG_bl,Aw45_bl,CDRSB_bl,ADAS13_bl,MMSE_bl,RAwLT_immediate_bl,RAwLT_learning_bl,RAwLT_forgetting_bl,RAwLT_perc_forgetting_bl,FAQ_bl,MOCA_bl";
+
+#number of rules
+#nbRules <- Sys.getenv("PARAM_OptGDMaxNbWeights");
+nbRules <- 10;
+
+if (nbRules < 1) {
+  nbRules <- 10; # default to 10 rules if settings are wrong
+}
 
 # Fetch the data and store it in an arff file
 #mydata <- fetchData();
@@ -51,22 +61,80 @@ target_atts_list <- paste(target_atts, collapse=",");
 descriptive_atts_list <- paste(descriptive_atts, collapse=",");
 
 setFile <- file("mydata.s", open="w");
-writeLines("[Data]", setFile);
-writeLines("File = mydata.arff", setFile);
-writeLines("RemoveMissingTarget = Yes", setFile);
-writeLines("\n[Attributes]", setFile);
-writeLines(paste("Target =", target_atts_list, collapse=""), setFile);
-writeLines(paste("Descriptive =", descriptive_atts_list, collapse=""), setFile);
-writeLines("\n[Tree]", setFile);
-writeLines("ConvertToRules = Leaves", setFile);
+
+# setting file sections
+settingsData <- c(
+	"[Data]",
+	"File = mydata.arff",
+	"RemoveMissingTarget = Yes");
+	
+settingsAttributes <- c(
+	"\n[Attributes]",
+	paste("Target =", target_atts_list, collapse=""),
+	paste("Descriptive =", descriptive_atts_list, collapse=""));
+
+settingsTree <- c(
+	"\n[Tree]",
+	"ConvertToRules = Leaves",
+	"Heuristic = VarianceReduction");
+
+settingsRules <- c(
+	"\n[Rules]",
+	"CoveringMethod = RulesFromTree",
+	"PredictionMethod = GDOptimized",
+	"OptOmitRulePredictions = Yes",
+	"OptGDEarlyStopAmount = 0.333333",
+	"OptGDMTGradientCombine = Avg",
+	"OptNormalization = Yes",
+	"PrintRuleWiseErrors = No",
+	"OptGDMaxIter = 100",
+	"OptGDNbOfTParameterTry = 11",
+	"OptRuleWeightThreshold = 0",
+	"ComputeDispersion = No",
+	"OptGDGradTreshold = 0.0",
+	paste("OptGDMaxNbWeights = ", toString(nbRules), sep=""),
+	"OptLinearTermsTruncate = No",
+	"OptDefaultShiftPred = Yes",
+	"OptGDEarlyTTryStop = Yes",
+	"OptGDEarlyStopTreshold = 1.1",
+	"CoveringWeight = 0.1",
+	"OptAddLinearTerms = YesSaveMemory",
+	"OptAddLinearTerms = Yes",
+	"RuleAddingMethod = Always",
+	"PrintAllRules = No",
+	"OptGDIsDynStepsize = Yes",
+	"OptGDStepSize = 1");
+
+settingsConstraints <- c(
+	"\n[Constraints]",
+	"MaxDepth = 10");
+	
+settingsEnsemble <- c(
+	"\n[Ensemble]",
+	"EnsembleMethod = RForest",
+	"Iterations = 100",
+	"PrintAllModels = No",
+	"EnsembleRandomDepth = Yes");
+	
+writeLines(settingsData, setFile);
+writeLines(settingsAttributes, setFile);
+writeLines(settingsTree, setFile);
+writeLines(settingsRules, setFile);
+writeLines(settingsConstraints, setFile);
+writeLines(settingsEnsemble,setFile);
+
+
+
+
+
 close(setFile);
 
 # Perform the computation
-system("java -cp clus.jar:commons-math-1.0.jar:jgap.jar:weka.jar clus.Clus mydata.s", wait=TRUE, ignore.stdout=TRUE, ignore.stderr=FALSE);
+system("java -jar Clus.jar -rules mydata.s", wait=TRUE, ignore.stdout=TRUE, ignore.stderr=FALSE);
 
 # Collect results
-resFile <- file("mydata.out", open="r");
+resFile <- file("model.json", open="r");
 res <- readLines(resFile);
 
 # Store results in the database
-#saveResults(toJSON(res, auto_unbox=TRUE, digits=8));
+#saveResults(res);
