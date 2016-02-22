@@ -134,7 +134,7 @@ close(setFile);
 system("java -jar Clus.jar -rules mydata.s", wait=TRUE, ignore.stdout=TRUE, ignore.stderr=FALSE);
 
 # Collect results
-resFile <- file("model.json", open="r");
+resFile <- file("mydata.json", open="r");
 res <- readLines(resFile);
 
 # Store results in the database
