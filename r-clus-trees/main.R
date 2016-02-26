@@ -1,5 +1,5 @@
 #
-# Builds a set of predictive clustering rules, describing (one or more)  
+# Builds a set of predictive clustering trees, describing (one or more)  
 # target variable(s) with descriptive variables.
 # The data are obtained from the local databases using a specific query.
 # This query will be the same for all nodes.
@@ -12,7 +12,6 @@
 #                       (target variable) names
 #      PARAM_covarnames : Column separated list of covariables
 #                         (descriptive variables) names
-#      PARAM_OptGDMaxNbWeights : Positive integer representing maximum number of induced rules
 #
 # - Execution context:
 #      JOB_ID : ID of the job
@@ -36,12 +35,6 @@ library(foreign);
 initial_wd <- getwd();
 varnames <- Sys.getenv("PARAM_varnames");
 covarnames <- Sys.getenv("PARAM_covarnames");
-
-#number of rules
-nbRules <- Sys.getenv("PARAM_OptGDMaxNbWeights");
-if (nbRules < 1) {
-  nbRules <- 10; # default to 10 rules if settings are wrong
-}
 
 # Fetch the data and store it in an arff file
 mydata <- fetchData();
@@ -73,47 +66,8 @@ settingsAttributes <- c(
 
 settingsTree <- c(
 	"\n[Tree]",
-	"ConvertToRules = Leaves",
 	"Heuristic = VarianceReduction");
 
-settingsRules <- c(
-	"\n[Rules]",
-	"CoveringMethod = RulesFromTree",
-	"PredictionMethod = GDOptimized",
-	"OptOmitRulePredictions = Yes",
-	"OptGDEarlyStopAmount = 0.333333",
-	"OptGDMTGradientCombine = Avg",
-	"OptNormalization = Yes",
-	"PrintRuleWiseErrors = No",
-	"OptGDMaxIter = 100",
-	"OptGDNbOfTParameterTry = 11",
-	"OptRuleWeightThreshold = 0",
-	"ComputeDispersion = No",
-	"OptGDGradTreshold = 0.0",
-	paste("OptGDMaxNbWeights = ", toString(nbRules), sep=""),
-	"OptLinearTermsTruncate = No",
-	"OptDefaultShiftPred = Yes",
-	"OptGDEarlyTTryStop = Yes",
-	"OptGDEarlyStopTreshold = 1.1",
-	"CoveringWeight = 0.1",
-	"OptAddLinearTerms = YesSaveMemory",
-	"OptAddLinearTerms = Yes",
-	"RuleAddingMethod = Always",
-	"PrintAllRules = Yes",
-	"OptGDIsDynStepsize = Yes",
-	"OptGDStepSize = 1");
-
-settingsConstraints <- c(
-	"\n[Constraints]",
-	"MaxDepth = 10");
-	
-settingsEnsemble <- c(
-	"\n[Ensemble]",
-	"EnsembleMethod = RForest",
-	"Iterations = 100",
-	"PrintAllModels = No",
-	"EnsembleRandomDepth = Yes");
-	
 settingsOutput <- c(
 	"\n[Output]",
 	"OutputJSONModel = Yes");
@@ -121,15 +75,12 @@ settingsOutput <- c(
 writeLines(settingsData, setFile);
 writeLines(settingsAttributes, setFile);
 writeLines(settingsTree, setFile);
-writeLines(settingsRules, setFile);
-writeLines(settingsConstraints, setFile);
-writeLines(settingsEnsemble,setFile);
 writeLines(settingsOutput,setFile);
 
 close(setFile);
 
 # Perform the computation
-system("java -jar Clus.jar -rules mydata.s", wait=TRUE, ignore.stdout=TRUE, ignore.stderr=FALSE);
+system("java -jar Clus.jar mydata.s", wait=TRUE, ignore.stdout=TRUE, ignore.stderr=FALSE);
 
 # Collect results
 resFile <- file("mydata.json", open="r");
