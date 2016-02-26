@@ -1,0 +1,426 @@
+Clus run mydata
+***************
+
+Date: 2/26/16 5:25 PM
+File: mydata.out
+Attributes: 36 (input: 19, output: 14)
+Missing values: No
+
+[General]
+Verbose = 1
+Compatibility = Latest
+RandomSeed = 0
+ResourceInfoLoaded = No
+
+[Data]
+File = mydata.arff
+TestSet = None
+PruneSet = None
+XVal = 10
+RemoveMissingTarget = Yes
+NormalizeData = None
+
+[Attributes]
+Target = 21-34
+Clustering = 21-34
+Descriptive = 2-20
+Key = None
+Disable = None
+Weights = Normalize
+ClusteringWeights = 1.0
+ReduceMemoryNominalAttrs = No
+
+[Constraints]
+Syntactic = None
+MaxSize = Infinity
+MaxError = 0.0
+MaxDepth = 10
+
+[Output]
+ShowModels = {Default, Pruned, Others}
+TrainErrors = Yes
+ValidErrors = Yes
+TestErrors = Yes
+AllFoldModels = Yes
+AllFoldErrors = No
+AllFoldDatasets = No
+UnknownFrequency = No
+BranchFrequency = No
+ShowInfo = {Count}
+PrintModelAndExamples = No
+WriteErrorFile = No
+WritePredictions = {None}
+ModelIDFiles = No
+WriteCurves = No
+OutputXMLModel = No
+OutputJSONModel = Yes
+OutputPythonModel = No
+OutputDatabaseQueries = No
+
+[Nominal]
+MEstimate = 1.0
+
+[Model]
+MinimalWeight = 2.0
+MinimalNumberExamples = 0
+MinimalKnownWeight = 0.0
+ParamTuneNumberFolds = 10
+ClassWeights = 0.0
+NominalSubsetTests = Yes
+
+[Tree]
+Heuristic = VarianceReduction
+PruningMethod = Default
+FTest = 1.0
+BinarySplit = Yes
+ConvertToRules = Leaves
+AlternativeSplits = No
+Optimize = {}
+MSENominal = No
+SplitSampling = None
+InductionOrder = DepthFirst
+
+[Rules]
+CoveringMethod = RulesFromTree
+PredictionMethod = GDOptimized
+RuleAddingMethod = Always
+CoveringWeight = 0.1
+InstCoveringWeightThreshold = 0.1
+MaxRulesNb = 1000
+HeurDispOffset = 0.0
+HeurCoveragePar = 1.0
+HeurRuleDistPar = 0.0
+HeurPrototypeDistPar = 0.0
+RuleSignificanceLevel = 0.05
+RuleNbSigAtts = 0
+ComputeDispersion = No
+VarBasedDispNormWeight = 4.0
+DispersionWeights = 
+  TargetWeight = 1.0
+  NonTargetWeight = 1.0
+  NumericWeight = 1.0
+  NominalWeight = 1.0
+RandomRules = 0
+PrintRuleWiseErrors = No
+PrintAllRules = Yes
+ConstrainedToFirstAttVal = No
+OptDEPopSize = 500
+OptDENumEval = 10000
+OptDECrossProb = 0.3
+OptDEWeight = 0.5
+OptDESeed = 0
+OptDERegulPower = 1.0
+OptDEProbMutationZero = 0.0
+OptDEProbMutationNonZero = 0.0
+OptRegPar = 0.0
+OptNbZeroesPar = 0.0
+OptRuleWeightThreshold = 0.0
+OptDELossFunction = Squared
+OptDefaultShiftPred = Yes
+OptAddLinearTerms = Yes
+OptNormalizeLinearTerms = Yes
+OptLinearTermsTruncate = No
+OptOmitRulePredictions = Yes
+OptWeightGenerality = No
+OptNormalization = Yes
+OptHuberAlpha = 0.9
+OptGDMaxIter = 100
+OptGDGradTreshold = 0.0
+OptGDStepSize = 1.0
+OptGDIsDynStepsize = Yes
+OptGDMaxNbWeights = 10
+OptGDEarlyStopAmount = 0.333333
+OptGDEarlyStopTreshold = 1.1
+OptGDNbOfStepSizeReduce = Infinity
+OptGDExternalMethod = update
+OptGDMTGradientCombine = Avg
+OptGDNbOfTParameterTry = 11
+OptGDEarlyTTryStop = Yes
+
+[Beam]
+SizePenalty = 0.1
+BeamWidth = 10
+BeamBestN = 5
+MaxSize = Infinity
+AttributeHeuristic = Default
+FastSearch = Yes
+PostPrune = No
+RemoveEqualHeur = No
+BeamSimilarity = 0.0
+BeamSortOnTrainParameteres = No
+DistSyntacticConstr = None
+BeamToForest = No
+
+[Ensemble]
+Iterations = 100
+EnsembleMethod = RForest
+VotingType = Majority
+SelectRandomSubspaces = 5
+PrintAllModels = No
+PrintAllModelFiles = No
+Optimize = No
+OOBestimate = No
+FeatureRanking = No
+WriteEnsemblePredictions = No
+EnsembleRandomDepth = Yes
+BagSelection = -1
+BagSize = 0
+
+Run: 01
+*******
+
+Statistics
+----------
+
+FTValue (FTest): 1.0
+Induction Time: 10.642 sec
+Pruning Time: 0 sec
+Model information
+     Default: Nodes = 1 (Leaves: 1)
+     Original: FOREST with 100 models (Total nodes: 15892 and leaves: 7996)
+	 Model 1: Nodes = 105 (Leaves: 53)
+	 Model 2: Nodes = 197 (Leaves: 99)
+	 Model 3: Nodes = 147 (Leaves: 74)
+	 Model 4: Nodes = 151 (Leaves: 76)
+	 Model 5: Nodes = 147 (Leaves: 74)
+	 Model 6: Nodes = 255 (Leaves: 128)
+	 Model 7: Nodes = 237 (Leaves: 119)
+	 Model 8: Nodes = 15 (Leaves: 8)
+	 Model 9: Nodes = 49 (Leaves: 25)
+	 Model 10: Nodes = 27 (Leaves: 14)
+	 Model 11: Nodes = 233 (Leaves: 117)
+	 Model 12: Nodes = 281 (Leaves: 141)
+	 Model 13: Nodes = 281 (Leaves: 141)
+	 Model 14: Nodes = 359 (Leaves: 180)
+	 Model 15: Nodes = 169 (Leaves: 85)
+	 Model 16: Nodes = 15 (Leaves: 8)
+	 Model 17: Nodes = 313 (Leaves: 157)
+	 Model 18: Nodes = 149 (Leaves: 75)
+	 Model 19: Nodes = 221 (Leaves: 111)
+	 Model 20: Nodes = 101 (Leaves: 51)
+	 Model 21: Nodes = 7 (Leaves: 4)
+	 Model 22: Nodes = 145 (Leaves: 73)
+	 Model 23: Nodes = 101 (Leaves: 51)
+	 Model 24: Nodes = 97 (Leaves: 49)
+	 Model 25: Nodes = 57 (Leaves: 29)
+	 Model 26: Nodes = 55 (Leaves: 28)
+	 Model 27: Nodes = 169 (Leaves: 85)
+	 Model 28: Nodes = 55 (Leaves: 28)
+	 Model 29: Nodes = 325 (Leaves: 163)
+	 Model 30: Nodes = 259 (Leaves: 130)
+	 Model 31: Nodes = 15 (Leaves: 8)
+	 Model 32: Nodes = 111 (Leaves: 56)
+	 Model 33: Nodes = 103 (Leaves: 52)
+	 Model 34: Nodes = 275 (Leaves: 138)
+	 Model 35: Nodes = 175 (Leaves: 88)
+	 Model 36: Nodes = 419 (Leaves: 210)
+	 Model 37: Nodes = 255 (Leaves: 128)
+	 Model 38: Nodes = 201 (Leaves: 101)
+	 Model 39: Nodes = 249 (Leaves: 125)
+	 Model 40: Nodes = 55 (Leaves: 28)
+	 Model 41: Nodes = 15 (Leaves: 8)
+	 Model 42: Nodes = 55 (Leaves: 28)
+	 Model 43: Nodes = 141 (Leaves: 71)
+	 Model 44: Nodes = 203 (Leaves: 102)
+	 Model 45: Nodes = 223 (Leaves: 112)
+	 Model 46: Nodes = 55 (Leaves: 28)
+	 Model 47: Nodes = 363 (Leaves: 182)
+	 Model 48: Nodes = 107 (Leaves: 54)
+	 Model 49: Nodes = 105 (Leaves: 53)
+	 Model 50: Nodes = 111 (Leaves: 56)
+	 Model 51: Nodes = 189 (Leaves: 95)
+	 Model 52: Nodes = 97 (Leaves: 49)
+	 Model 53: Nodes = 29 (Leaves: 15)
+	 Model 54: Nodes = 339 (Leaves: 170)
+	 Model 55: Nodes = 223 (Leaves: 112)
+	 Model 56: Nodes = 61 (Leaves: 31)
+	 Model 57: Nodes = 91 (Leaves: 46)
+	 Model 58: Nodes = 7 (Leaves: 4)
+	 Model 59: Nodes = 61 (Leaves: 31)
+	 Model 60: Nodes = 299 (Leaves: 150)
+	 Model 61: Nodes = 15 (Leaves: 8)
+	 Model 62: Nodes = 105 (Leaves: 53)
+	 Model 63: Nodes = 81 (Leaves: 41)
+	 Model 64: Nodes = 119 (Leaves: 60)
+	 Model 65: Nodes = 155 (Leaves: 78)
+	 Model 66: Nodes = 169 (Leaves: 85)
+	 Model 67: Nodes = 57 (Leaves: 29)
+	 Model 68: Nodes = 137 (Leaves: 69)
+	 Model 69: Nodes = 7 (Leaves: 4)
+	 Model 70: Nodes = 15 (Leaves: 8)
+	 Model 71: Nodes = 237 (Leaves: 119)
+	 Model 72: Nodes = 203 (Leaves: 102)
+	 Model 73: Nodes = 331 (Leaves: 166)
+	 Model 74: Nodes = 379 (Leaves: 190)
+	 Model 75: Nodes = 163 (Leaves: 82)
+	 Model 76: Nodes = 15 (Leaves: 8)
+	 Model 77: Nodes = 7 (Leaves: 4)
+	 Model 78: Nodes = 87 (Leaves: 44)
+	 Model 79: Nodes = 165 (Leaves: 83)
+	 Model 80: Nodes = 229 (Leaves: 115)
+	 Model 81: Nodes = 219 (Leaves: 110)
+	 Model 82: Nodes = 53 (Leaves: 27)
+	 Model 83: Nodes = 315 (Leaves: 158)
+	 Model 84: Nodes = 395 (Leaves: 198)
+	 Model 85: Nodes = 207 (Leaves: 104)
+	 Model 86: Nodes = 333 (Leaves: 167)
+	 Model 87: Nodes = 57 (Leaves: 29)
+	 Model 88: Nodes = 401 (Leaves: 201)
+	 Model 89: Nodes = 219 (Leaves: 110)
+	 Model 90: Nodes = 163 (Leaves: 82)
+	 Model 91: Nodes = 31 (Leaves: 16)
+	 Model 92: Nodes = 233 (Leaves: 117)
+	 Model 93: Nodes = 59 (Leaves: 30)
+	 Model 94: Nodes = 167 (Leaves: 84)
+	 Model 95: Nodes = 59 (Leaves: 30)
+	 Model 96: Nodes = 285 (Leaves: 143)
+	 Model 97: Nodes = 157 (Leaves: 79)
+	 Model 98: Nodes = 169 (Leaves: 85)
+	 Model 99: Nodes = 151 (Leaves: 76)
+	 Model 100: Nodes = 189 (Leaves: 95)
+
+     Rules: Rules = 11 (Tests: 32 and linear terms: 0)
+
+Training error
+--------------
+
+Number of examples: 916
+Mean absolute error (MAE)
+   Default        : [0.5879,0.5021,0.3949,0.4095,0.4672,0.5722,0.4076,0.7773,0.594,0.5319,0.6124,0.6986,0.7542,0.5915]: 0.5644
+   Original       : [1.5421,1.3585,1.0032,0.9847,1.1089,1.3564,1.2445,1.1333,0.8354,0.7551,0.7938,0.8504,0.9909,0.8677]: 1.0589
+   Rules          : [0.5387,0.4891,0.3739,0.3827,0.4469,0.5572,0.3723,0.5683,0.4489,0.4075,0.4579,0.5235,0.5954,0.4127]: 0.4696
+Mean squared error (MSE)
+   Default        : [0.5122,0.394,0.2856,0.2972,0.3741,0.5271,0.2776,0.8288,0.5434,0.4901,0.6124,0.7319,0.8322,0.5282]: 0.5168
+   Original       : [3.0507,2.2792,1.2939,1.2778,1.611,2.407,1.8804,1.908,1.2383,1.0287,1.1581,1.2728,1.6118,1.2429]: 1.6615
+   Rules          : [0.441,0.3665,0.2605,0.2642,0.3421,0.4942,0.241,0.5325,0.4023,0.3802,0.4581,0.5387,0.6171,0.3536]: 0.4066
+Root mean squared error (RMSE)
+   Default        : [0.7157,0.6277,0.5344,0.5452,0.6116,0.726,0.5269,0.9104,0.7371,0.7001,0.7825,0.8555,0.9123,0.7268]: 0.7189
+   Original       : [1.7466,1.5097,1.1375,1.1304,1.2692,1.5515,1.3713,1.3813,1.1128,1.0143,1.0762,1.1282,1.2696,1.1149]: 1.289
+   Rules          : [0.6641,0.6054,0.5104,0.514,0.5849,0.703,0.4909,0.7297,0.6342,0.6166,0.6768,0.7339,0.7856,0.5946]: 0.6376
+Weighted root mean squared error (RMSE) (Weights (14))
+   Default        : [1,1,1,1,1,1,1,1,1,1,1,1,1,1]: 1
+   Original       : [2.4405,2.4052,2.1284,2.0734,2.0753,2.137,2.6026,1.5173,1.5096,1.4488,1.3752,1.3188,1.3917,1.5339]: 1.9052
+   Rules          : [0.9279,0.9644,0.9549,0.9428,0.9563,0.9683,0.9317,0.8016,0.8604,0.8807,0.8649,0.8579,0.8611,0.8182]: 0.901
+Pearson correlation coefficient
+   Default        : [0,�,-0,0,�,-0,0,�,-0,�,0,0,-0,�], Avg r^2: �
+   Original       : [-0.2478,0.0174,0.1205,0.0778,0.1034,0.0293,-0.1013,-0.2043,0.0361,0.2815,0.1683,0.1438,-0.0105,-0.0075], Avg r^2: 0.0197
+   Rules          : [0.4044,0.2884,0.3214,0.3622,0.314,0.2695,0.3933,0.7067,0.5881,0.5436,0.5783,0.5929,0.5835,0.6776], Avg r^2: 0.2452
+
+Default Model
+*************
+
+[2.122045,1.744084,1.387557,1.405404,1.522116,1.805147,1.687413,2.080477,1.622476,1.467999,1.585355,1.683847,1.86012,1.720025]: 916
+
+Original Model
+**************
+
+Forest with 100 models
+
+Rules Model
+***********
+
+Gradient descent optimization: Smallest test fitness of 0.102675 with T value: 0
+
+Rule 1:
+=======
+IF true
+THEN [2.283607,1.885783,1.508205,1.528479,1.660183,1.96904,1.806355,2.285989,1.788884,1.626038,1.762009,1.876971,2.066058,1.884095]: 916
+
+   Rule weight        : 1
+
+Rule 2:
+=======
+IF CDRSB_bl <= 2 AND
+   ADAS13_bl <= 15 AND
+   Entorhinal_bl > 2172.0 AND
+   FAQ_bl <= 0 AND
+   RAwLT_immediate_bl > 29.0 AND
+   MMSE_bl > 25.0
+THEN [0.958766,0.613588,0.555625,0.638912,0.708011,0.821329,0.714602,1.820737,1.156525,0.938008,1.213995,1.350715,1.487042,1.329574]: 332
+
+   Rule weight        : -0.056419
+
+Rule 3:
+=======
+IF MMSE_bl > 25.0 AND
+   CDRSB_bl <= 2 AND
+   wentricles_bl <= 67,163
+THEN [0.569408,0.321936,0.366612,0.424017,0.367408,0.313149,0.402397,1.791746,1.228955,1.245407,1.407195,1.511336,1.57264,1.453574]: 619
+
+   Rule weight        : -0.054878
+
+Rule 4:
+=======
+IF FDG_bl > 5.85891 AND
+   FAQ_bl <= 0
+THEN [0.885177,0.540502,0.435325,0.44235,0.524555,0.466114,0.57298,1.820737,1.185911,1.03261,1.197664,1.395497,1.438728,1.352453]: 387
+
+   Rule weight        : -0.053192
+
+Rule 5:
+=======
+IF MOCA_bl > 21.0 AND
+   RAwLT_immediate_bl > 29.0 AND
+   FAQ_bl <= 0
+THEN [0.914331,0.668565,0.545369,0.654235,0.646969,0.775308,0.704462,1.820737,1.199272,0.992696,1.195878,1.393597,1.511728,1.357779]: 367
+
+   Rule weight        : -0.057121
+
+Rule 6:
+=======
+IF ADAS13_bl <= 18 AND
+   MMSE_bl > 25.0
+THEN [0.527279,0.291216,0.484782,0.488146,0.369382,0.310168,0.41711,1.806405,1.288447,1.225929,1.405714,1.470517,1.526329,1.453574]: 618
+
+   Rule weight        : -0.028801
+
+Rule 7:
+=======
+IF Hippocampus_bl > 6494.402319 AND
+   ADAS13_bl <= 15 AND
+   FAQ_bl <= 0 AND
+   CDRSB_bl <= 1.5 AND
+   wentricles_bl <= 83,689
+THEN [0.955123,0.482802,0.487291,0.586109,0.637133,0.720181,0.643017,1.820737,1.156134,0.979161,1.26008,1.401447,1.545156,1.358094]: 321
+
+   Rule weight        : -0.057284
+
+Rule 8:
+=======
+IF FAQ_bl <= 5 AND
+   ADAS13_bl <= 14 AND
+   MidTemp_bl > 16425.0
+THEN [0.703742,0.52316,0.53276,0.488453,0.436807,0.533162,0.548351,1.797929,1.301894,1.124735,1.348505,1.546075,1.594883,1.453574]: 512
+
+   Rule weight        : -0.059069
+
+Rule 9:
+=======
+IF FAQ_bl <= 0 AND
+   RAwLT_immediate_bl > 29.0
+THEN [0.834678,0.447453,0.406984,0.640868,0.541109,0.593772,0.575797,1.820737,1.132282,0.990019,1.223701,1.408789,1.576633,1.354549]: 382
+
+   Rule weight        : -0.055113
+
+Rule 10:
+========
+IF MOCA_bl > 23.0 AND
+   ADAS13_bl <= 15
+THEN [0.945494,0.597528,0.553961,0.587365,0.663513,0.529689,0.666818,1.820737,1.278899,1.119522,1.171412,1.325327,1.52194,1.386498]: 420
+
+   Rule weight        : -0.048604
+
+Rule 11:
+========
+IF FAQ_bl <= 0 AND
+   MOCA_bl > 19.0 AND
+   ADAS13_bl <= 15 AND
+   APOE4 <= 1
+THEN [0.932192,0.574268,0.558579,0.593126,0.652075,0.648739,0.668194,1.820737,1.180211,0.970775,1.296757,1.456368,1.607937,1.380175]: 342
+
+   Rule weight        : -0.058678
+
+Default rule:
+=============
+Default = [?,?,?,?,?,?,?,?,?,?,?,?,?,?]: 0
+
