@@ -30,13 +30,11 @@
 #
 
 library(hbpjdbcconnect);
-#library(jsonlite);
 library(foreign);
 
 # Initialisation
 initial_wd <- getwd();
 varnames <- Sys.getenv("PARAM_varnames");
-
 covarnames <- Sys.getenv("PARAM_covarnames");
 
 #number of rules
@@ -48,6 +46,11 @@ if (nbRules < 1) {
 # Fetch the data and store it in an arff file
 mydata <- fetchData();
 write.arff(mydata, "mydata.arff", eol = "\n", relation = "mydata");
+
+# Get query information and store it into query.param file
+queryFile<-file("query.param")
+writeLines(Sys.getenv("PARAM_query"), queryFile)
+close(queryFile)
 
 # Assemble the Clus settings file
 target_atts <- match(unlist(strsplit(varnames, ",")), names(mydata));

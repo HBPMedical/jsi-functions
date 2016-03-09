@@ -30,29 +30,27 @@
 #
 
 #library(hbpjdbcconnect);
-#library(jsonlite);
 library(foreign);
 
 # Initialisation
 initial_wd <- getwd();
-#varnames <- Sys.getenv("PARAM_varnames");
 varnames <- "EcogPtMem_bl,EcogPtLang_bl,EcogPtwisspat_bl,EcogPtPlan_bl,EcogPtOrgan_bl,EcogPtDiwatt_bl,EcogPtTotal_bl,EcogSPMem_bl,EcogSPLang_bl,EcogSPwisspat_bl,EcogSPPlan_bl,EcogSPOrgan_bl,EcogSPDiwatt_bl,EcogSPTotal_bl";
-
-#covarnames <- Sys.getenv("PARAM_covarnames");
 covarnames <- "APOE4,wentricles_bl,Hippocampus_bl,WholeBrain_bl,Entorhinal_bl,Fusiform_bl,MidTemp_bl,ICw_bl,FDG_bl,Aw45_bl,CDRSB_bl,ADAS13_bl,MMSE_bl,RAwLT_immediate_bl,RAwLT_learning_bl,RAwLT_forgetting_bl,RAwLT_perc_forgetting_bl,FAQ_bl,MOCA_bl";
 
 #number of rules
-#nbRules <- Sys.getenv("PARAM_OptGDMaxNbWeights");
 nbRules <- 10;
-
 if (nbRules < 1) {
   nbRules <- 10; # default to 10 rules if settings are wrong
 }
 
 # Fetch the data and store it in an arff file
-#mydata <- fetchData();
 mydata <- read.csv("mydata.csv");
 write.arff(mydata, "mydata.arff", eol = "\n", relation = "mydata");
+
+# Get query information and store it into query.param file
+queryFile<-file("query.param")
+writeLines("LOCAL QUERY", queryFile)
+close(queryFile)
 
 # Assemble the Clus settings file
 target_atts <- match(unlist(strsplit(varnames, ",")), names(mydata));
@@ -136,6 +134,3 @@ system("java -jar Clus.jar -rules mydata.s", wait=TRUE, ignore.stdout=TRUE, igno
 # Collect results
 resFile <- file("mydata.json", open="r");
 res <- readLines(resFile);
-
-# Store results in the database
-#saveResults(res);

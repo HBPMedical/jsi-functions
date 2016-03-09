@@ -1,0 +1,21 @@
+# MIP Functions working files #
+###############################
+
+mydata.arff
+mydata.model
+mydata.json
+mydata.out
+mydata.s
+query.param
+
+*.swp
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
